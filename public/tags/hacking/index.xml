@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hacking on Matheus Laidler Page</title>
+    <link>/tags/hacking/</link>
+    <description>Recent content in Hacking on Matheus Laidler Page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Sun, 28 Jan 2024 22:00:45 -0300</lastBuildDate>
+    <atom:link href="/tags/hacking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Desvendando os perigos em uma WiFi</title>
+      <link>/post/perigos-da-wifi/</link>
+      <pubDate>Wed, 12 May 2021 15:29:11 +0200</pubDate>
+      <guid>/post/perigos-da-wifi/</guid>
+      <description>Além do Sinal: Conhecendo os principais perigos de uma rede wireless As &amp;lsquo;Ameaças Invisíveis&amp;rsquo; que te farão compreender os principais riscos das redes sem fio (wireless). Será apresentado alguns dos &amp;ldquo;Perigos Ocultos&amp;rdquo; ignorados pela maioria da população.&#xA;É comum ouvirmos coisas que soam como:&#xA;&amp;ldquo;Aah, qual o problema de usar wifis alheias e compartilhar minha rede com qualquer pessoa? Essa galerinha de segurança complicam tudo&amp;hellip; cheios de regrinha chata!&amp;rdquo;&#xA;Por isso acho importante uma publicação como esta, que mostrará alguns riscos de segurança que podem estar presente em diversas situações &amp;lsquo;banais&amp;rsquo; do dia-a-dia.</description>
+    </item>
+  </channel>
+</rss>

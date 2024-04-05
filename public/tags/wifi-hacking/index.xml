@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wifi Hacking on Matheus Laidler Page</title>
+    <link>/tags/wifi-hacking/</link>
+    <description>Recent content in Wifi Hacking on Matheus Laidler Page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Mon, 29 Jan 2024 01:44:51 -0300</lastBuildDate>
+    <atom:link href="/tags/wifi-hacking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Invadindo rede wifi na prática</title>
+      <link>/post/hackeando-wifi/</link>
+      <pubDate>Fri, 25 Aug 2023 08:19:12 +0200</pubDate>
+      <guid>/post/hackeando-wifi/</guid>
+      <description>Hackeando redes sem fio na prática Neste artigo vou mostrar para vocês como funciona na prática a invasão de uma rede wireless, e como foi minhas primeiras experiências hackeando redes wifi reais.&#xA;Será considerado que você já sabe do básico de redes wireless, como funcionam os protocolos e conceitos, pois eles não serão explicados aprofundadamente nesta publicação. Para isso, teremos uma postagem específica que correrá por toda essa base de forma detalhada.</description>
+    </item>
+  </channel>
+</rss>

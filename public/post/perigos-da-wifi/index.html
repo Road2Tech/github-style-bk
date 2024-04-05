@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='js/theme-mode.js'></script>
+    <link rel="stylesheet" href='css/frameworks.min.css' />
+    <link rel="stylesheet" href='css/github.min.css' />
+    <link rel="stylesheet" href='css/github-style.css' />
+    <link rel="stylesheet" href='css/light.css' />
+    <link rel="stylesheet" href='css/dark.css' />
+    <link rel="stylesheet" href='css/syntax.css' />
+
+    <link rel="stylesheet" href='css/menu.css' />
+    <script type="application/javascript" src='js/menu.js'></script>
+    <title>Desvendando os perigos em uma WiFi - Matheus Laidler Page</title>
+    
+    <link rel="icon" type="image/x-icon" href='/images/terminal.png'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    
+    <meta name="description"
+  content="Além do Sinal: Conhecendo os principais perigos de uma rede wireless As &amp;lsquo;Ameaças Invisíveis&amp;rsquo; que te farão compreender os principais riscos das redes sem fio (wireless). Será apresentado alguns dos &amp;ldquo;Perigos Ocultos&amp;rdquo; ignorados pela maioria da população.
+É comum ouvirmos coisas que soam como:
+&amp;ldquo;Aah, qual o problema de usar wifis alheias e compartilhar minha rede com qualquer pessoa? Essa galerinha de segurança complicam tudo&amp;hellip; cheios de regrinha chata!&amp;rdquo;
+Por isso acho importante uma publicação como esta, que mostrará alguns riscos de segurança que podem estar presente em diversas situações &amp;lsquo;banais&amp;rsquo; do dia-a-dia." />
+<meta name="keywords"
+  content='matheus laidler, matheuslaidler, matheus-laidler, mlaidler, cibersegurança, wayofsecurity, wayofsec, road2tech, road2technology, acervo de TI, artigos, write ups, blog' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/post/perigos-da-wifi/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Desvendando os perigos em uma WiFi - Matheus Laidler Page" />
+<meta name="twitter:description"
+  content="Além do Sinal: Conhecendo os principais perigos de uma rede wireless As &amp;lsquo;Ameaças Invisíveis&amp;rsquo; que te farão compreender os principais riscos das redes sem fio (wireless). Será apresentado alguns dos &amp;ldquo;Perigos Ocultos&amp;rdquo; ignorados pela maioria da população.
+É comum ouvirmos coisas que soam como:
+&amp;ldquo;Aah, qual o problema de usar wifis alheias e compartilhar minha rede com qualquer pessoa? Essa galerinha de segurança complicam tudo&amp;hellip; cheios de regrinha chata!&amp;rdquo;
+Por isso acho importante uma publicação como esta, que mostrará alguns riscos de segurança que podem estar presente em diversas situações &amp;lsquo;banais&amp;rsquo; do dia-a-dia." />
+<meta name="twitter:site" content="" />
+<meta name="twitter:creator" content="Matheus Laidler" />
+<meta name="twitter:image"
+  content="">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Desvendando os perigos em uma WiFi - Matheus Laidler Page">
+<meta property="og:description"
+  content="Além do Sinal: Conhecendo os principais perigos de uma rede wireless As &amp;lsquo;Ameaças Invisíveis&amp;rsquo; que te farão compreender os principais riscos das redes sem fio (wireless). Será apresentado alguns dos &amp;ldquo;Perigos Ocultos&amp;rdquo; ignorados pela maioria da população.
+É comum ouvirmos coisas que soam como:
+&amp;ldquo;Aah, qual o problema de usar wifis alheias e compartilhar minha rede com qualquer pessoa? Essa galerinha de segurança complicam tudo&amp;hellip; cheios de regrinha chata!&amp;rdquo;
+Por isso acho importante uma publicação como esta, que mostrará alguns riscos de segurança que podem estar presente em diversas situações &amp;lsquo;banais&amp;rsquo; do dia-a-dia." />
+<meta property="og:url" content="/post/perigos-da-wifi/" />
+<meta property="og:site_name" content="Desvendando os perigos em uma WiFi" />
+<meta property="og:image"
+  content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2021-05-12 15:29:11 &#43;0200 &#43;0200" />
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+  
+
+
+<nav id="cssmenu">
+  <table width="auto" border="0" align="left"> 
+    <tbody>
+     <tr>  
+      <td>
+        <a href="" title="matheuslaidler" target="_parent"> 
+				  <img width="75%" top="1.225vh" left="15vh" align="left" border="0" src="images/menu/matheuslaidler.gif"/></a>
+      </td> 
+      </tbody>
+    </table> 
+  <div class="menu-icon">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  <ul>
+    <li class="active"><a href="">Acervo</a></li>
+    <li><a href="https://github.com/matheuslaidler" target="_blank">Github</a></li>
+    <li><a href="https://matheuslaidler.github.io/Cryptool/" target="_blank">Cryptool</a> </li>
+    <li class="has-sub">
+    <a href="#pages" data-toggle="dropdown">Páginas</a>
+    <ul>
+      <li><a href="https://github.com/matheuslaidler" target="_blank">Github</a></li>
+      <li><a href="https://matheuslaidler.gitbook.io/" target="_blank">Rascunhos</a></li> 
+      <li><a href="https://road2tech.github.io/" target="_blank">Road2Tech</a></li> 
+      <li><a href="https://wayofsec.github.io/" target="_blank">WayOfSec</a></li> 
+      <li><a href="https://youtube.com/@matheuslaidler" target="_blank">Youtube</a></li> 
+    </ul>
+      </li>
+      <li class="has-sub">
+      <a href="#donates" data-toggle="dropdown">Doação</a> 
+      <ul>
+        <li><a href="https://github.com/sponsors/matheuslaidler" target="_blank" title="Github Sponsor">Github Sponsor</a></li>
+        <li class="has-sub">
+          <a href="https://www.paypal.com/donate/?hosted_button_id=SJYYS28HZPU9A" title="Paypal">PayPal</a>
+            
+      <ul><center>
+      <div id="donate-button-container">
+        <div id="donate-button" ></div>
+        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+        <script>
+        PayPal.Donation.Button({
+        env:'production',
+        hosted_button_id:'55KGKSTYDTDCS',
+        image: {
+        src:'https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif',
+        alt:'Faça doações com o botão do PayPal',
+        title:'PayPal - Doação segura !',
+        }
+        }).render('#donate-button');
+        </script>
+      </div>
+      </center></ul>
+      </li>
+      </ul>
+    </li>
+      <li class="has-sub">
+        <a href="#pt-br" target="_parent" data-toggle="dropdown"  target="_parent">
+          <img class="idioma" src="images/btns/portuguese.png" title="portuguese"/></a>
+          <ul>
+            <li>
+              <a href="https://medium.com/@matheuslaidler" target="_blank">
+                <img class="idioma" src="/images/btns/english.png" title="english"/></a>
+            </li>
+          </ul>
+      </li>
+          <li class="no-arrow">
+            <svg width="60" height="20" fill="none" stroke-width="3" stroke-linecap="round"
+              stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            </svg>
+            <span class="profile-color-modes-toggle js-promo-color-modes-toggle no-select" tabindex="0"
+              onclick="switchTheme()">
+              <div class="profile-color-modes-toggle-track no-select"></div>
+              <div class="profile-color-modes-toggle-thumb js-promo-color-modes-thumb">
+                <svg style="fill: var(--color-profile-color-modes-toggle-moon); margin: 7px 0 0 7px;" width="14"
+                  height="13" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
+                  </path>
+                </svg>
+              </div>
+            </span>
+          </li>
+  </nav>
+
+
+
+<div style="position: relative">
+  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
+    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
+      <a class="Header-link" href="https://google.com.br/" target="_blank">
+        <svg class="octicon" height="18" viewBox="0 0 16 16" version="1.1" width="32">
+          <path fill-rule="evenodd"
+            d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"
+            >
+            
+          </path>
+        </svg>
+      </a>
+    </div>
+    <div class="Header-item d-md-none">
+      <button class="Header-link btn-link js-details-target" type="button"
+        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
+          <path fill-rule="evenodd"
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div style="display: none;" id="header-search"
+      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+      <div
+        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
+        <div class="position-relative">
+          <form target="_blank" action="https://www.google.com/search?q=inurl%3A" accept-charset="UTF-8" method="get"
+            autocomplete="off">
+            <label
+              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+              <input type="text"
+                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+                name="q" value="" placeholder="Google Hacking Search" autocomplete="off">
+              <input type="hidden" name="q" value="site:"> 
+            </label>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  
+  </header>
+</div>
+  
+<div>
+  <main>
+    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+      <div class="px-0">
+        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+          <div class="flex-auto min-width-0 width-fit mr-3">
+            <div class="d-flex">
+              <div class="d-none d-md-block">
+                <a class="avatar mr-2 flex-shrink-0" href="">
+                  <img class=" avatar-user"
+                    src="/../images/perfil.jpg"
+                    width="32" height="32"></a>
+                    
+              </div>
+              <div class="d-flex flex-column">
+                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
+                  <span class="author"> 
+                     <a href="">matheuslaidler</a></span><span
+                    class="path-divider">/</span><a href="/post">post</a><span
+                    class="path-divider">/</span><strong class="css-truncate-target mr-1" style="max-width: 410px"><a
+                      href="/post/perigos-da-wifi/">Desvendando os perigos em uma WiFi</a></strong>
+                </h1>
+                <div class="note m-0">
+                  Created <relative-time datetime="Wed, 12 May 2021 15:29:11 &#43;0200"
+                    class="no-wrap">
+                    Wed, 12 May 2021 15:29:11 &#43;0200</relative-time>
+
+                  
+                  <span class="file-info-divider"></span>
+                  Modified <relative-time datetime="Sun, 28 Jan 2024 22:00:45 -0300"
+                    class="no-wrap">
+                    Sun, 28 Jan 2024 22:00:45 -0300</relative-time>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lg px-3 new-discussion-timeline">
+      <div class="repository-content gist-content">
+        <div>
+          <div class="js-gist-file-update-container js-task-list-container file-box">
+            <div id="file-pytest" class="file my-2">
+              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
+                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                    
+                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
+                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
+                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                      </svg>
+                    </summary>
+                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
+                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
+                        </div>
+                      </div>
+                    </details-menu>
+                      2367 Palavras
+                     <span class="file-info-divider"></span>
+                                       Leitura de aproximadamente 12 minuto(s) 
+                                        
+
+                  </div>
+                  <div class="file-actions flex-order-2 pt-0">
+                    
+                    
+                    <a class="muted-link mr-3" href="/tags/redes">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      Redes
+                    </a>
+                    
+                    <a class="muted-link mr-3" href="/tags/wifi">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      WiFi
+                    </a>
+                    
+                    <a class="muted-link mr-3" href="/tags/hacking">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      Hacking
+                    </a>
+                    
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
+                <article class="markdown-body entry-content container-lg"><h1 id="além-do-sinal-conhecendo-os-principais-perigos-de-uma-rede-wireless">Além do Sinal: Conhecendo os principais perigos de uma rede wireless</h1>
+<p>As &lsquo;Ameaças Invisíveis&rsquo; que te farão compreender os principais riscos das redes sem fio (wireless). Será apresentado alguns dos &ldquo;Perigos Ocultos&rdquo; ignorados pela maioria da população.</p>
+<p>É comum ouvirmos coisas que soam como:</p>
+<p><em>&ldquo;Aah, qual o problema de usar wifis alheias e compartilhar minha rede com qualquer pessoa? Essa galerinha de segurança complicam tudo&hellip; cheios de regrinha chata!&rdquo;</em></p>
+<p>Por isso acho importante uma publicação como esta, que mostrará alguns riscos de segurança que podem estar presente em diversas situações &lsquo;banais&rsquo; do dia-a-dia. Entretando, nesta publicação ainda não terá algo prático, apenas em outras publicações e vídeos.</p>
+<h3 id="sobre-o-que-será-apresentado">Sobre o que será apresentado</h3>
+<p>Você já se perguntou como é fácil invadir uma rede wireless? Você sabe quais são os riscos de usar uma rede wifi de terceiros ou então o perigo de ter credenciais fracas na sua própria rede?
+Quer saber como funciona a proteção e a invasão em redes WEP e WPA-PSK, e quais são os perigos que você pode enfrentar se alguém conseguir acesso à sua rede sem a sua permissão?
+Quer ver algumas dicas de como se proteger e evitar que seus dados sejam roubados ou manipulados por hackers mal-intencionados?</p>
+<p>Nesta postagem falaremos exatamente sobre isso. Você sairá compreendendo os Perigos das Redes Wireless.</p>
+<blockquote>
+<p>Lembrando que conteúdos mais técnicos e/ou práticos de wifi hacking estarão em outra publicação</p>
+</blockquote>
+<h2 id="breve-explicação-sobre-a-segurança-e-os-protocolos">Breve explicação sobre a segurança e os protocolos</h2>
+<p>As redes wireless usam diferentes protocolos de segurança para criptografar os dados que são transmitidos entre os dispositivos e o roteador. Os mais comuns são o WEP (Wired Equivalent Privacy) e o WPA-PSK (Wi-Fi Protected Access Pre-Shared Key). O WEP é um protocolo antigo e muito vulnerável, que pode ser facilmente quebrado por programas que capturam os pacotes de dados e descobrem a chave de criptografia. O WPA - WPA2 ou WPA3 - é um protocolo mais moderno e seguro, que usa um algoritmo mais complexo para gerar a chave de criptografia, que muda a cada conexão. No entanto, também pode ser invadido se o usuário escolher uma senha padrão ou fraca, já que pode ser descoberta por programas que testam milhares de combinações possíveis até encontrar a correta. Esse método é chamado de brute force (força bruta) e o arquivo que armazena as senhas geralmente é chamado de wordlist. Inclusive, foi assim que invadi a rede WiFi de uma vizinha utilizando o pacote aircrack e gerando uma wordlist com crunch.</p>
+<h3 id="minha-primeira-invasão-a-uma-wifi">Minha primeira invasão a uma WIFI</h3>
+<p>Em meados de 2019 ou 2020 eu percebi/descobri um padrão nas credenciais que vinham com o modem roteador de uma operadora grande e isso me fez criar um script para testar minha teoria. Assim, sempre que alguém utilizava uma rede com as credenciais padrões desta operadora, eu testava força bruta com a wordlist que meu script me retornava e sempre era certeira para achar a credencial da rede. Em outras palavras, quando a análise combinatória é feita e a wordlist gerada de acordo com o padrão que eu detectei, entre os resultados gerados sempre estaria a senha correta da rede e isso acarretava em um ataque eficaz, bastando apenas testar todas as possibilidades (senhas do arquivo) e a senha seria quebrada e descoberta. Fui publicar com finalidade acadêmica e meu script precisou ser tirado do ar pós recebimento de uma notificação para retirada do repositório do github - eu também acabei vacilando por ter deixado o nome da empresa. Hoje ela não utiliza mais o mesmo padrão, mas ainda temos muitos usuários que estão utilizando esta configuração antiga e minha vizinha é um exemplo - Até por isso que precisei retirar meu script do ar (farei um post e um vídeo específico sobre isso futuramente).</p>
+<blockquote>
+<p>Para saber mais sobre toda a parte prática por trás, acesse a postagem&gt; <a href="../hackeando-wifi">SecLab: Hackeando rede wireless</a></p>
+</blockquote>
+<h2 id="sendo-rede-é-local-não-é-preciso-se-preocupar">Sendo rede é local não é preciso se preocupar?</h2>
+<p>&ldquo;Matheus, mas para alguém entrar na minha rede ela precisa estar em uma determinada distância. Acho besteira e exagero se bitolar&rdquo;. Imagino que se você mora em uma casa mais isolada e grande, precisando estar dentro do seu terreno para ter acesso a rede, até pode ser mais tranquilo sim, mas ainda é importante se atentar a segurança o mínimo possível. Agora, uma realidade diferente e bem comum e se você mora em um prédio no centro de uma cidade - geralmente lugares que pessoas gostam por poderem ir andando para qualquer lugar que precisarem. Estes lugares não apenas estão com diversas redes residenciais como também corporativas por perto, estando cheio de ambientes que podem ter a distância necessária - mesmo sendo vizinhos de apartamento. Se um cara malicioso está com seu notebook em um café e consegue detectar sua rede, você pode sim sofrer ataques - como desconexão ou ter a senha descoberta -, e por isso é super necessário se preocupar com segurança e talvez nem compartilhar sua senha de wifi para qualquer visitante passageiro.</p>
+<p>Afinal, o que de ruim pode mesmo acontecer se alguém entrar na sua rede privada?</p>
+<h2 id="possíveis-ataques-do-invasor-e-seus-riscos">Possíveis ataques do invasor e seus riscos</h2>
+<p>Bom&hellip; se um invasor conseguir se conectar à sua rede wireless, ele pode fazer várias coisas maliciosas, como:</p>
+<ul>
+<li>
+<p>Fazer um ataque de DNS Spoofing/Poisonning, que consiste em alterar o endereço IP (Internet Protocol) associado a um nome de domínio no DNS (Domain Name System) local da rede, fazendo com que os dispositivos da rede acessem um site falso em vez do verdadeiro. Por exemplo, ele pode fazer com que você acesse um site falso do seu banco, que tem a mesma aparência do original, mas que na verdade é uma armadilha para capturar seus dados bancários com phishing (pois é, neste caso não adianta saber que é o link original).</p>
+</li>
+<li>
+<p>Fazer um ataque de MITM (Man In The Middle), que consiste em interceptar os dados que você envia e recebe pela rede, podendo ler, modificar ou bloquear as informações. Por exemplo, ele pode ver quais sites você visita, quais senhas você digita, quais mensagens você envia ou recebe, quais arquivos você baixa ou compartilha, etc (tá aí a importância da criptografia).</p>
+</li>
+<li>
+<p>Fazer um ataque de ARP Spoofing/Poisonning, que consiste em enganar os dispositivos da rede sobre qual é o endereço físico / MAC (Media Access Control) do roteador, fazendo com que eles enviem os dados para o invasor em vez do roteador. Assim, ele pode controlar todo o tráfego da rede e fazer o mesmo que no ataque de MITM.</p>
+</li>
+<li>
+<p>Fazer um SSL Stripping, que se resume no invasor removendo a criptografia SSL/TLS do tráfego da vítima, permitindo que ele leia e manipule o tráfego.</p>
+</li>
+<li>
+<p>Fazer um Rogue Access Point, que se resume no invasor criar um ponto de acesso Wi-Fi falso para interceptar o tráfego dos usuários.</p>
+</li>
+</ul>
+<p>. Um bônus que podemos falar sobre ataques é de um em que não necessariamente o atacante estará já com acesso garantido em sua rede, mas apenas alcance a mesma. Este ataque é chamado de DeAuth e neste caso se resume em te derrubar da rede, fazendo sua conexão cair e te forçando a reconectar, mas pode ser feito de forma que você não de reconecte por muito tempo. Este ataque pode ser uma etapa importante para um wifi hacking, que para poder capturar o que chamamos de handshake é preciso esperar alguém se conectar ou forçando uma vítima a cair e voltar rapidamente com desautenticação. As explicações mais técnicas estarão em outra publicação, mas resumidamente este ataque fica enviando pacotes de dissociação/desautenticação para desconectar dispositivos da rede wireless.</p>
+<h3 id="resumindo-a-ópera-dos-riscos-em-poucas-palavras">Resumindo a ópera dos riscos em poucas palavras</h3>
+<p>Fazendo um resumo sobre os principais riscos comentado de forma simples.</p>
+<p>Uma vez que se conecta com o roteador, os dispositivos da rede atualizam uma tabela ARP, que associa endereços IP a endereços MAC. Um ataque comum em redes wireless é o ARP Spoofing, onde o invasor envia pacotes falsos para alterar essa associação, fazendo com que seu dispositivo se comunique com ele em vez do roteador. Assim, ele pode monitorar ou bloquear seu acesso à rede. Além disso, o invasor pode alterar o DNS local da sua rede para redirecioná-lo para um site falso quando você digita o nome de um site verdadeiro, uma tática conhecida como phishing. Por exemplo, ao digitar <a href="https://www.instagram.com">www.instagram.com</a>, você pode ser levado a um site que se parece com o Instagram, mas que é uma armadilha para roubar seus dados. Esses são só alguns exemplos do que pode ser feito pelo invasor.</p>
+<p>Mas então, sabendo disso tudo, como ter menos riscos? como estar menos vulnerável?</p>
+<h2 id="medidas-de-segurança">Medidas de segurança</h2>
+<p>Como você pode ver, esses ataques podem causar sérios danos à sua privacidade, à sua segurança e até mesmo à sua conta bancária. Por isso, é muito importante tomar algumas medidas para se proteger e evitar que sua rede wireless seja invadida. Algumas delas são:</p>
+<ul>
+<li>
+<p>Evite dar acesso a sua rede para qualquer um, isso também pode ser um problema. Ainda mais se sua rede tiver um alcance até a rua ou estabelecimentos, por exemplo. (Se possível ter uma rede separada para visitantes)</p>
+</li>
+<li>
+<p>Usar um protocolo de segurança adequado para sua rede wireless. Evite usar o WEP, que é muito fraco e fácil de quebrar sem precisar de wordlist. Prefira usar o WPA2-PSK, que é mais forte e difícil de invadir. Se possível, use a WPA3, que é a versão mais recente e avançada da criptografia wireless.</p>
+</li>
+<li>
+<p>Evite redes wireless públicas. Não use redes wifi públicas sem proteção, se você precisar usar uma rede wifi pública, como em um café, em um hotel ou em um aeroporto, ao menos use uma VPN (Virtual Private Network) para criptografar seus dados e impedir que eles sejam interceptados por terceiros - ProtonVPN tem versão gratuita. Também evite acessar sites sensíveis ou fazer transações financeiras nessas redes.</p>
+</li>
+<li>
+<p>Ative o filtro de endereços MAC no seu roteador. O MAC é um código único que identifica cada dispositivo que se conecta à rede wireless. Com o filtro ativado, você pode permitir ou bloquear o acesso de determinados dispositivos à sua rede, aumentando o controle e a segurança.</p>
+</li>
+<li>
+<p>Para ficar mais tranquilo, pode tentar verificar a tabela ARP para verificar se os IP&rsquo;s e os endereços MACs estão certos e não com algum duplicado, como um endereço físico para 2 IPs diferentes.</p>
+</li>
+<li>
+<p>Desative o WPS no seu roteador. O WPS é uma função que facilita a conexão de dispositivos à rede wireless sem a necessidade de digitar a senha. Porém, essa função também pode ser explorada por hackers para invadir sua rede, pois usa um código PIN de 8 dígitos que pode ser descoberto por força bruta.</p>
+</li>
+<li>
+<p>Mantenha o firmware do seu roteador atualizado. O firmware é o software que controla o funcionamento do seu roteador. Ele pode conter falhas ou vulnerabilidades que podem ser exploradas por hackers para invadir sua rede. Por isso, é importante verificar se há atualizações disponíveis e instalá-las periodicamente.</p>
+</li>
+<li>
+<p>Escolher uma senha forte para sua rede wireless. Não use senhas padrão ou óbvias, como o nome do roteador, o seu nome, a sua data de nascimento, etc. Use senhas longas e complexas, isto é, que misturem letras maiúsculas e minúsculas, números e símbolos, além de possuir ao menos um comprimento mínimo de 8 e recomendado de 16 caracteres. Em caso de empresas ou de qualquer conta importante, também pode ser uma boa que passe a mudar a senha periodicamente e não a compartilhe com estranhos ou blocos de notas alheios.</p>
+</li>
+<li>
+<p>Ter um antivírus atualizado e firewall no seu dispositivo. Esses programas podem detectar e bloquear tentativas de invasão ou de infecção por vírus ou malwares. Mantenha-os sempre atualizado, inclusive seu sistema operacional, e faça varreduras periódicas para eliminar possíveis ameaças.</p>
+</li>
+<li>
+<p>Usar autenticação de dois fatores. Ao configurar a autenticação de dois fatores em contas on-line, é mais difícil para os invasores obter acesso a essas contas, mesmo se eles conseguirem obter senhas.</p>
+</li>
+<li>
+<p>Verificar se o site que você está acessando é seguro. Observe se há um cadeado ou um https na barra de endereço e se o nome do site está correto. Desconfie de sites que pedem informações sensíveis ou que oferecem ofertas muito vantajosas.</p>
+</li>
+</ul>
+<h3 id="resumindo-a-ópera-das-medidas-de-segurança">Resumindo a ópera das medidas de segurança</h3>
+<p>A segurança da rede wireless é crucial. Evite dar acesso irrestrito à sua rede, especialmente se ela alcança áreas públicas. Use protocolos de segurança robustos como WPA2-PSK ou WPA3 e evite redes públicas desprotegidas. Se necessário, use uma VPN para criptografar seus dados em redes públicas.</p>
+<p>Ative o filtro de endereços MAC no roteador para controlar o acesso à rede e verifique regularmente a tabela ARP para evitar duplicações. Desative o WPS, que pode ser explorado por hackers, e mantenha o firmware do roteador atualizado para corrigir possíveis vulnerabilidades.</p>
+<p>Escolha senhas fortes e complexas para sua rede wireless e mude-as periodicamente. Mantenha um antivírus atualizado e um firewall ativo no seu dispositivo e use a autenticação de dois fatores sempre que possível.</p>
+<p>Por fim, verifique a segurança dos sites que você acessa, procurando por um cadeado ou “https” na barra de endereço. Desconfie de sites que solicitam informações sensíveis ou oferecem ofertas muito boas para serem verdadeiras. A segurança online é uma prática contínua e requer vigilância constante.</p>
+<h2 id="considerações-finais">Considerações finais</h2>
+<p>Seguindo essas dicas, você pode aumentar a sua segurança e a da sua rede wireless, e evitar que seus dados sejam expostos ou roubados por hackers. Lembre-se que a internet é um lugar maravilhoso, mas também perigoso, e que você deve estar sempre atento e protegido. As últimas dicas colocadas servem para outros cenários, não apenas para redes wireless corporativas e/ou residensiais. Talvez algumas coisas possam parecer um exagero dependendo da sua realidade, porém em muitos casos a coisa não pode ser vista assim - principalmente se estivermos falando de uma empresa - e cabe a você decidir isso agora que sabe de muitos dos riscos. Nesses casos empresariais, colocar uma rede de visitante separado de qualquer sistema interno é super importante, não é recomendado compartilhar a mesma rede usada pelos funcionários para os clientes.</p>
+<p>Espero que este post, com essas dicas, tenha sido útil e esclarecedor para você e sua empresa. Então, caso tenha gostado deste conteúdo, compartilhe com seus amigos nas redes sociais e deixe seu comentário abaixo.</p>
+<p>Atenciosamente,
+Matheus Laidler.</p>
+</article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="application/javascript" src='js/toc.js'></script>
+<link rel="stylesheet" href='css/toc.css' />
+
+<div id="gitalk-container" class="gitalk-container"></div>
+<link rel="stylesheet" href='css/gitalk.css'>
+<script src='js/gitalk.min.js'></script>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '097939594343c0ecdfda',
+    clientSecret: 'cd61ebe34d6edd02560e48a54e4dc397c5b9fade',
+    repo: 'repo',
+    owner: 'matheuslaidler',
+    admin: ['matheuslaidler'],
+    id: eval("location.pathname"), 
+    distractionFreeMode: false 
+  });
+  (function() {
+    gitalk.render('gitalk-container');
+  })();
+</script>
+
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="https://github.com/matheuslaidler/matheuslaidler.github.io" target="_blank"> 
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0">Theme <a href='https://github.com/matheuslaidler/github-style-remaster'>GitHub Style Remaster</a> <br>Forked from <a href='https://github.com/MeiK2333/github-style'>Github Style</a> by MeiK2333 <br>Blog created with <a href='https://gohugo.io/'>Hugo</a> and <a href='https://pages.github.com/'>Github Pages </a> <br><center><i>(Todos os devidos créditos ao criador do tema)</i></center></li>
+      
+    </ul>
+    <a aria-label="LICENSE" title="Copyright" class="footer-octicon d-none d-lg-block mr-lg-4" href="https://github.com/matheuslaidler/matheuslaidler.github.io/blob/main/LICENSE" target="_blank">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      <center><li class="mr-3 mr-lg-0">  Finalidade acadêmica e sem fins lucrativos.<br> © Copyright 2020 - All rights reserved 🌎 <br><i> Todos os direitos reservados.<br></i></li></center>
+      </ul>
+    <a aria-label="English" title="Medium" class="footer-octicon d-none d-lg-block mr-lg-4" style="text-decoration:none;" href="https://medium.com/@matheuslaidler" target="_blank">
+      <svg height="20" class="octicon octicon-mark-github" viewBox="0 -3.5 16 16" version="1.1" width="20">
+        <path fill-rule="evenodd"
+          d="M9.025 8c0 2.485-2.02 4.5-4.513 4.5A4.506 4.506 0 0 1 0 8c0-2.486 2.02-4.5 4.512-4.5A4.506 4.506 0 0 1 9.025 8m4.95 0c0 2.34-1.01 4.236-2.256 4.236S9.463 10.339 9.463 8c0-2.34 1.01-4.236 2.256-4.236S13.975 5.661 13.975 8M16 8c0 2.096-.355 3.795-.794 3.795-.438 0-.793-1.7-.793-3.795 0-2.096.355-3.795.794-3.795.438 0 .793 1.699.793 3.795">
+        </path>
+        <center>🇺🇸</center>
+      </svg>
+    </a>
+    <a aria-label="Videos" title="Youtube" class="footer-octicon d-none d-lg-block mr-lg-4" href="https://youtube.com/@matheuslaidler" target="_blank">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 1.35 17 17" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z">
+        </path>
+      </svg>
+    </a>
+    <a aria-label="Profile" title="Instagram" class="footer-octicon d-none d-lg-block mr-lg-4" href="https://instagram.com/matheuslaidler" target="_blank">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0.125 18.5 18.5" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334">
+        </path>
+      </svg>
+    </a>
+    <a aria-label="Professional" title="LinkedIn" class="footer-octicon d-none d-lg-block mr-lg-4" href="https://linkedin.com/in/" target="_blank">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0.25 19 19" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z">
+        </path>
+      </svg>
+    </a>
+  </div>
+
+  
+  
+  
+  <img class="footer-octicon d-none d-lg-block mr-lg-4" style="height:10ch;width:auto;margin-inline:136ch;margin-top:-17.5ch;opacity:0.45;" src="/images/menu/matheus.png">
+  <li class="footer-octicon d-none d-lg-block mr-lg-4" style="height:12ch;width:auto;margin-inline:48ch;margin-top:-7ch;">O proprietário deste site não assume quaisquer responsabilidades provenientes das ações de terceiros. </li>
+  
+</div>
+</body>
+
+<script type="application/javascript" src="js/github-style.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Matheus Laidler Page</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on Matheus Laidler Page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Mon, 29 Jan 2024 01:44:51 -0300</lastBuildDate>
+    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SecLab</title>
+      <link>/categories/seclab/</link>
+      <pubDate>Fri, 25 Aug 2023 08:19:12 +0200</pubDate>
+      <guid>/categories/seclab/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ForensicWay</title>
+      <link>/categories/forensicway/</link>
+      <pubDate>Sun, 20 Aug 2023 18:29:10 +0200</pubDate>
+      <guid>/categories/forensicway/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WayOfSecurity</title>
+      <link>/categories/wayofsecurity/</link>
+      <pubDate>Wed, 12 May 2021 15:29:11 +0200</pubDate>
+      <guid>/categories/wayofsecurity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Road2Technology</title>
+      <link>/categories/road2technology/</link>
+      <pubDate>Wed, 24 Feb 2021 18:49:01 +0200</pubDate>
+      <guid>/categories/road2technology/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

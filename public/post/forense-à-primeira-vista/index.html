@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='js/theme-mode.js'></script>
+    <link rel="stylesheet" href='css/frameworks.min.css' />
+    <link rel="stylesheet" href='css/github.min.css' />
+    <link rel="stylesheet" href='css/github-style.css' />
+    <link rel="stylesheet" href='css/light.css' />
+    <link rel="stylesheet" href='css/dark.css' />
+    <link rel="stylesheet" href='css/syntax.css' />
+
+    <link rel="stylesheet" href='css/menu.css' />
+    <script type="application/javascript" src='js/menu.js'></script>
+    <title>Desvendando a Forense Digital - Matheus Laidler Page</title>
+    
+    <link rel="icon" type="image/x-icon" href='/images/terminal.png'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    
+    <meta name="description"
+  content="Computação Forense à primeira vista Introdução geral para a área tecnológica de forense computacional.
+Conhecendo a área A computação forense é uma área da ciência da computação que se dedica a investigar e analisar dados digitais com o objetivo de encontrar evidências ou informações relevantes para casos judiciais, criminais ou administrativos. A computação forense envolve diversas etapas, desde a aquisição de imagem dos dispositivos de armazenamento até a recuperação de arquivos apagados ou ocultos." />
+<meta name="keywords"
+  content='matheus laidler, matheuslaidler, matheus-laidler, mlaidler, cibersegurança, wayofsecurity, wayofsec, road2tech, road2technology, acervo de TI, artigos, write ups, blog' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/post/forense-%C3%A0-primeira-vista/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Desvendando a Forense Digital - Matheus Laidler Page" />
+<meta name="twitter:description"
+  content="Computação Forense à primeira vista Introdução geral para a área tecnológica de forense computacional.
+Conhecendo a área A computação forense é uma área da ciência da computação que se dedica a investigar e analisar dados digitais com o objetivo de encontrar evidências ou informações relevantes para casos judiciais, criminais ou administrativos. A computação forense envolve diversas etapas, desde a aquisição de imagem dos dispositivos de armazenamento até a recuperação de arquivos apagados ou ocultos." />
+<meta name="twitter:site" content="" />
+<meta name="twitter:creator" content="Matheus Laidler" />
+<meta name="twitter:image"
+  content="">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Desvendando a Forense Digital - Matheus Laidler Page">
+<meta property="og:description"
+  content="Computação Forense à primeira vista Introdução geral para a área tecnológica de forense computacional.
+Conhecendo a área A computação forense é uma área da ciência da computação que se dedica a investigar e analisar dados digitais com o objetivo de encontrar evidências ou informações relevantes para casos judiciais, criminais ou administrativos. A computação forense envolve diversas etapas, desde a aquisição de imagem dos dispositivos de armazenamento até a recuperação de arquivos apagados ou ocultos." />
+<meta property="og:url" content="/post/forense-%C3%A0-primeira-vista/" />
+<meta property="og:site_name" content="Desvendando a Forense Digital" />
+<meta property="og:image"
+  content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2023-08-20 18:29:10 &#43;0200 &#43;0200" />
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+  
+
+
+<nav id="cssmenu">
+  <table width="auto" border="0" align="left"> 
+    <tbody>
+     <tr>  
+      <td>
+        <a href="" title="matheuslaidler" target="_parent"> 
+				  <img width="75%" top="1.225vh" left="15vh" align="left" border="0" src="images/menu/matheuslaidler.gif"/></a>
+      </td> 
+      </tbody>
+    </table> 
+  <div class="menu-icon">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  <ul>
+    <li class="active"><a href="">Acervo</a></li>
+    <li><a href="https://github.com/matheuslaidler" target="_blank">Github</a></li>
+    <li><a href="https://matheuslaidler.github.io/Cryptool/" target="_blank">Cryptool</a> </li>
+    <li class="has-sub">
+    <a href="#pages" data-toggle="dropdown">Páginas</a>
+    <ul>
+      <li><a href="https://github.com/matheuslaidler" target="_blank">Github</a></li>
+      <li><a href="https://matheuslaidler.gitbook.io/" target="_blank">Rascunhos</a></li> 
+      <li><a href="https://road2tech.github.io/" target="_blank">Road2Tech</a></li> 
+      <li><a href="https://wayofsec.github.io/" target="_blank">WayOfSec</a></li> 
+      <li><a href="https://youtube.com/@matheuslaidler" target="_blank">Youtube</a></li> 
+    </ul>
+      </li>
+      <li class="has-sub">
+      <a href="#donates" data-toggle="dropdown">Doação</a> 
+      <ul>
+        <li><a href="https://github.com/sponsors/matheuslaidler" target="_blank" title="Github Sponsor">Github Sponsor</a></li>
+        <li class="has-sub">
+          <a href="https://www.paypal.com/donate/?hosted_button_id=SJYYS28HZPU9A" title="Paypal">PayPal</a>
+            
+      <ul><center>
+      <div id="donate-button-container">
+        <div id="donate-button" ></div>
+        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+        <script>
+        PayPal.Donation.Button({
+        env:'production',
+        hosted_button_id:'55KGKSTYDTDCS',
+        image: {
+        src:'https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif',
+        alt:'Faça doações com o botão do PayPal',
+        title:'PayPal - Doação segura !',
+        }
+        }).render('#donate-button');
+        </script>
+      </div>
+      </center></ul>
+      </li>
+      </ul>
+    </li>
+      <li class="has-sub">
+        <a href="#pt-br" target="_parent" data-toggle="dropdown"  target="_parent">
+          <img class="idioma" src="images/btns/portuguese.png" title="portuguese"/></a>
+          <ul>
+            <li>
+              <a href="https://medium.com/@matheuslaidler" target="_blank">
+                <img class="idioma" src="/images/btns/english.png" title="english"/></a>
+            </li>
+          </ul>
+      </li>
+          <li class="no-arrow">
+            <svg width="60" height="20" fill="none" stroke-width="3" stroke-linecap="round"
+              stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            </svg>
+            <span class="profile-color-modes-toggle js-promo-color-modes-toggle no-select" tabindex="0"
+              onclick="switchTheme()">
+              <div class="profile-color-modes-toggle-track no-select"></div>
+              <div class="profile-color-modes-toggle-thumb js-promo-color-modes-thumb">
+                <svg style="fill: var(--color-profile-color-modes-toggle-moon); margin: 7px 0 0 7px;" width="14"
+                  height="13" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
+                  </path>
+                </svg>
+              </div>
+            </span>
+          </li>
+  </nav>
+
+
+
+<div style="position: relative">
+  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
+    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
+      <a class="Header-link" href="https://google.com.br/" target="_blank">
+        <svg class="octicon" height="18" viewBox="0 0 16 16" version="1.1" width="32">
+          <path fill-rule="evenodd"
+            d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"
+            >
+            
+          </path>
+        </svg>
+      </a>
+    </div>
+    <div class="Header-item d-md-none">
+      <button class="Header-link btn-link js-details-target" type="button"
+        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
+          <path fill-rule="evenodd"
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div style="display: none;" id="header-search"
+      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+      <div
+        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
+        <div class="position-relative">
+          <form target="_blank" action="https://www.google.com/search?q=inurl%3A" accept-charset="UTF-8" method="get"
+            autocomplete="off">
+            <label
+              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+              <input type="text"
+                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+                name="q" value="" placeholder="Google Hacking Search" autocomplete="off">
+              <input type="hidden" name="q" value="site:"> 
+            </label>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  
+  </header>
+</div>
+  
+<div>
+  <main>
+    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+      <div class="px-0">
+        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+          <div class="flex-auto min-width-0 width-fit mr-3">
+            <div class="d-flex">
+              <div class="d-none d-md-block">
+                <a class="avatar mr-2 flex-shrink-0" href="">
+                  <img class=" avatar-user"
+                    src="/../images/perfil.jpg"
+                    width="32" height="32"></a>
+                    
+              </div>
+              <div class="d-flex flex-column">
+                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
+                  <span class="author"> 
+                     <a href="">matheuslaidler</a></span><span
+                    class="path-divider">/</span><a href="/post">post</a><span
+                    class="path-divider">/</span><strong class="css-truncate-target mr-1" style="max-width: 410px"><a
+                      href="/post/forense-%C3%A0-primeira-vista/">Desvendando a Forense Digital</a></strong>
+                </h1>
+                <div class="note m-0">
+                  Created <relative-time datetime="Sun, 20 Aug 2023 18:29:10 &#43;0200"
+                    class="no-wrap">
+                    Sun, 20 Aug 2023 18:29:10 &#43;0200</relative-time>
+
+                  
+                  <span class="file-info-divider"></span>
+                  Modified <relative-time datetime="Sun, 28 Jan 2024 21:50:12 -0300"
+                    class="no-wrap">
+                    Sun, 28 Jan 2024 21:50:12 -0300</relative-time>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lg px-3 new-discussion-timeline">
+      <div class="repository-content gist-content">
+        <div>
+          <div class="js-gist-file-update-container js-task-list-container file-box">
+            <div id="file-pytest" class="file my-2">
+              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
+                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                    
+                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
+                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
+                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                      </svg>
+                    </summary>
+                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
+                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
+                        </div>
+                      </div>
+                    </details-menu>
+                      3562 Palavras
+                     <span class="file-info-divider"></span>
+                                       Leitura de aproximadamente 17 minuto(s) 
+                                        
+
+                  </div>
+                  <div class="file-actions flex-order-2 pt-0">
+                    
+                    
+                    <a class="muted-link mr-3" href="/tags/forense-digital">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      Forense digital
+                    </a>
+                    
+                    <a class="muted-link mr-3" href="/tags/an%C3%A1lise-forense">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      Análise Forense
+                    </a>
+                    
+                    <a class="muted-link mr-3" href="/tags/esteganografia">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      Esteganografia
+                    </a>
+                    
+                    <a class="muted-link mr-3" href="/tags/criptografia">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      Criptografia
+                    </a>
+                    
+                    <a class="muted-link mr-3" href="/tags/ferramentas-forense">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      Ferramentas Forense
+                    </a>
+                    
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
+                <article class="markdown-body entry-content container-lg"><h1 id="computação-forense-à-primeira-vista">Computação Forense à primeira vista</h1>
+<p>Introdução geral para a área tecnológica de forense computacional.</p>
+<h1 id="conhecendo-a-área">Conhecendo a área</h1>
+<p>A computação forense é uma área da ciência da computação que se dedica a investigar e analisar dados digitais com o objetivo de encontrar evidências ou informações relevantes para casos judiciais, criminais ou administrativos. A computação forense envolve diversas etapas, desde a aquisição de imagem dos dispositivos de armazenamento até a recuperação de arquivos apagados ou ocultos. Neste texto, vamos explicar um pouco mais sobre cada uma dessas etapas e como elas podem ajudar a solucionar crimes ou problemas envolvendo dados digitais.</p>
+<h1 id="tópcicos-e-etapas-importantes">Tópcicos e etapas importantes</h1>
+<p>Vamos passar um pente fino para clarear e apresentar sobre alguns tópicos importantes desta área da tecnologia investigativa</p>
+<h2 id="aquisição-de-imagem">Aquisição de imagem</h2>
+<p>A primeira etapa da computação forense é a aquisição de imagem, que consiste em copiar os dados de um dispositivo de armazenamento, como um HD ou um SSD, para outro meio, como um pendrive ou um CD. Essa cópia deve ser feita de forma fiel e íntegra, preservando todas as características e propriedades dos dados originais. Para isso, são usadas ferramentas específicas que garantem a autenticidade e a integridade da imagem, como o uso de hashing de arquivos.</p>
+<h2 id="hashing-de-arquivos">Hashing de arquivos</h2>
+<p>O hashing de arquivos é uma técnica que permite gerar um código único para cada arquivo, chamado de hash ou resumo criptográfico. Esse código é uma sequência de caracteres que representa o conteúdo do arquivo e que muda completamente se qualquer alteração for feita no arquivo.</p>
+<p>Por exemplo, se um arquivo tem o hash 1234567890abcdef, e uma letra for mudada no arquivo, o hash será outro, como 0987654321fedcba. Assim, o hashing permite verificar se um arquivo foi modificado ou não, comparando os hashes antes e depois da cópia.</p>
+<p>Nesse sentido, o <code>hashing</code> também pode ser usado para identificar arquivos duplicados ou maliciosos.</p>
+<blockquote>
+<p>Outra ocasião que utiliza-se de hashing é em armazenamento de senhas em banco de dados.
+Não seria prudente armazenas dados sensíveis de forma aberta e sem proteção.
+Para criar exemplos práticos de hash, você pode ir até a minha ferramenta <code>Cryptool</code> e gerar a hash de qualquer coisa que escrever, podendo escolher entre os tipos MD5, SHA-1, SHA-256 e SHA3-256.</p>
+</blockquote>
+<h2 id="análise-de-arquivos">Análise de arquivos</h2>
+<p>A análise de arquivos é a etapa em que os dados copiados são examinados para encontrar informações relevantes para a investigação. Essa análise pode ser feita de forma manual ou automatizada, usando ferramentas que permitem visualizar, filtrar, classificar e extrair dados dos arquivos. A análise pode envolver diferentes aspectos dos arquivos, como:</p>
+<ul>
+<li>O tipo do arquivo: se é um documento, uma imagem, um vídeo, um áudio, etc.</li>
+<li>O formato do arquivo: se é um PDF, um JPG, um MP4, um MP3, etc.</li>
+<li>O conteúdo do arquivo: o texto, a imagem, o som, etc.</li>
+<li>Os metadados do arquivo: as informações adicionais sobre o arquivo, como o autor, a data de criação, a localização geográfica, etc.</li>
+</ul>
+<h2 id="recuperação-de-arquivos">Recuperação de arquivos</h2>
+<p>A recuperação de arquivos é a etapa em que se tenta recuperar dados que foram apagados ou corrompidos nos dispositivos de armazenamento.</p>
+<p>Essa recuperação é possível porque quando um arquivo é apagado ou corrompido, <strong>ele não é realmente eliminado do disco</strong>, mas apenas marcado como espaço livre para ser sobrescrito por novos dados. Enquanto isso não acontece, o arquivo ainda pode ser recuperado usando ferramentas que conseguem ler os dados marcados como livres.</p>
+<p>A recuperação depende do tipo de dispositivo de armazenamento e do sistema operacional usado.</p>
+<p>Para entender melhor vamos dar um breve resumo sobre os discos rígidos de armazenamento.</p>
+<h3 id="ferramentas-de-recuperação">Ferramentas de recuperação</h3>
+<p>Algumas das ferramentas mais conhecidas e utilizadas na computação forense para recuperação de arquivos:</p>
+<ul>
+<li>
+<p><strong>R-STUDIO</strong>: É uma das melhores ferramentas no mercado para recuperação de dados e possui duas versões, a paga e a gratuita, sendo compatível com três sistemas operacionais: Windows, Mac e Linux. Além disso, suporta Desktops, IOS e mantém suporte a dispositivos baseados na web.</p>
+</li>
+<li>
+<p><strong>DMDE</strong>: É mais uma ferramenta de recuperação de dados em discos, mas que possui recursos como editor de disco, gerenciador de partição, cria imagens e clone de discos, recupera arquivos de painel atual, além de fazer a reconstrução de RAID.</p>
+</li>
+<li>
+<p><strong>Imã Forense</strong>: É uma ferramenta que oferece a organizações dos setores público e privado uma forma criativa e inovadora de recuperação de dados forenses para combater os crimes atuais.</p>
+</li>
+<li>
+<p><strong>Wondershare Recuperar</strong>: É uma ferramenta confiável que pode ajudá-lo a realizar a recuperação de dados forenses com facilidade.</p>
+</li>
+<li>
+<p><strong>AccessData</strong>: É uma ferramenta amplamente utilizada em tribunais, governos, exércitos e outros locais altamente confidenciais.</p>
+</li>
+<li>
+<p><strong>X-Ways</strong>: É um programa que oferece uma grande variedade de ferramentas que ajudam no processo de recuperação de dados forenses.</p>
+</li>
+<li>
+<p><strong>Tecnologias BlackBag</strong>: É uma ferramenta confiável que pode ajudá-lo a realizar a recuperação de dados forenses com facilidade.</p>
+</li>
+<li>
+<p><strong>Cellebrite</strong>: É uma ferramenta confiável que pode ajudá-lo a realizar a recuperação de dados forenses com facilidade.</p>
+</li>
+<li>
+<p><strong>CERT</strong>: É uma &lsquo;Ferramentas de Triagem&rsquo; confiável que pode ajudá-lo a realizar a recuperação de dados forenses com facilidade.</p>
+</li>
+<li>
+<p><strong>SIFT</strong>: É um programa que oferece uma grande variedade de ferramentas, incluindo <em>log2timeline</em> para gerar uma linha do tempo a partir de logs do sistema, <em>Scalpel</em> para a criação de arquivos de dados, <em>Rifiuti</em> para examinar a lixeira e muito mais.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Atenção</strong>: Tentativas excessivas de recuperação e/ou uso incorreto de ferramentas para recuperação de dados dos discos rígidos, sistemas RAID, pendrives e várias outras mídias de armazenamento de dados, podem agravar o problema nas mídias físicas.
+Portanto, o <strong>conhecimento de cada ferramenta</strong> para um determinado trabalho e cenário <strong>é crucial para evitar danos adicionais aos dispositivos de armazenamento durante a recuperação de dados</strong>.</p>
+</blockquote>
+<h3 id="sobre-hd-e-ssd">Sobre HD e SSD</h3>
+<p>Um HD (hard disk) é um dispositivo de armazenamento que usa discos magnéticos para gravar os dados (mais próximo de uma vitróla).
+Um SSD (solid state drive) é um dispositivo de armazenamento que usa chips de memória flash para gravar os dados (mais próximo de um pendrive).</p>
+<p>A funcionalidade da escrita e leitura de dados desses dois tipos de armazenamento têm diferenças importantes no seu funcionamento, como em termos de <em>velocidade</em> e <em>durabilidade</em>.</p>
+<ul>
+<li>
+<p>O <strong>HD</strong>, ou <code>disco rígido</code>, é uma memória não volátil que usa discos magnéticos para guardar as informações. Esses discos giram em alta velocidade e são lidos por um braço mecânico que se move sobre eles (assim como em uma vitróla com agulha sobre o disco, e por isso a fragilidade o qual qualquer pancada tem risco de corromper e comprometer dados).
+O <strong>processo de escrita e leitura</strong> é feito por meio da alteração ou detecção da magnetização dos pontos na superfície dos discos.</p>
+</li>
+<li>
+<p>O <strong>SSD</strong>, ou ´unidade de estado sólido`, é uma memória não volátil que usa &lsquo;células&rsquo; de memória flash para armazenar os dados. Essas células são acessadas eletronicamente por um controlador de memória que executa as funções do drive.
+O <strong>processo de escrita e leitura</strong> é feito por meio da aplicação ou verificação de uma carga elétrica nas células.</p>
+</li>
+</ul>
+<p>Os dois dispositivos têm vantagens e desvantagens em relação à <strong>recuperação de dados</strong>.</p>
+<ul>
+<li>Um HD geralmente tem mais capacidade de armazenamento e é mais barato que um SSD. No entanto, ele é <strong>mais lento e mais suscetível a danos físicos</strong>.
+Além disso, ele usa uma técnica chamada <code>fragmentação</code> para otimizar o espaço no disco. A fragmentação consiste em dividir os arquivos em pedaços menores e distribuí-los pelo disco, podendo apenas <strong>dificultar</strong> a recuperação dos arquivos apagados ou corrompidos.</li>
+<li>Um SSD geralmente tem menos capacidade de armazenamento e é mais caro que um HD. No entanto, ele é <strong>mais rápido e mais resistente a danos físicos</strong>.
+Além disso, ele usa uma técnica chamada <code>trim</code> para otimizar o desempenho do dispositivo, que consiste em <strong>apagar</strong> os dados marcados como livres de forma definitiva e <strong>isso pode impedir a recuperação dos arquivos apagados ou corrompidos</strong>.</li>
+</ul>
+<p>Então, resumidamente, a principal diferença entre o HD e o SSD é que o primeiro tem partes móveis e mecânicas, enquanto o segundo é todo formado por circuitos integrados. Por isso o SSD acaba sendo mais rápido, silencioso e resistente do que o HD, e também geralmente mais caro (atualmente deu uma boa melhorada).
+Na hora de escolher entre um HD e um SSD, é preciso levar em conta as suas necessidades e preferências. Se você busca mais desempenho (não estamos falando de ganho de FPS), agilidade e segurança, o SSD pode ser uma boa opção. Se você precisa de mais espaço, economia e compatibilidade, o HD pode ser mais adequado.
+A recomendação é uso de SSD sempre que possível.</p>
+<h3 id="sobre-windows-e-linux">Sobre Windows e Linux</h3>
+<p>Windows e Linux são dois sistemas operacionais que podem ser usados nos dispositivos de armazenamento, os quais também têm vantagens e desvantagens em relação à recuperação de dados.</p>
+<ul>
+<li>O <strong>Windows</strong> é o sistema operacional mais popular e mais fácil de usar. No entanto, ele usa um sistema de arquivos chamado <code>NTFS</code>, que é mais complexo e menos flexível que outros sistemas.
+O NTFS usa uma estrutura chamada <code>MFT</code> (master file table), que armazena as informações sobre os arquivos, como o nome, o tamanho, a localização, etc. Se a MFT for danificada, a recuperação dos arquivos pode ser impossível.</li>
+<li>O <strong>Linux</strong> é um kernel de uma <em>distribuição</em>, que este sim é um sistema operacional - geralmente gratuito - e bem usado por profissionais e especialistas. No entanto, como estamos falando sobre diversos tipos de sistemas operacionais que operam com o linux, acaba que vários sistemas de arquivos podem ser utilizados, como o <code>EXT4</code>, o <code>XFS</code>, o <code>BTRFS</code> e etc.
+Em geral, esses sistemas são mais simples e mais flexíveis que o NTFS, já que utilizam uma estrutura chamada <code>inode</code>, que armazena as informações sobre os arquivos, como o tipo, o dono, as permissões, etc. Se o inode for danificado, a recuperação dos arquivos pode ser possível usando ferramentas que conseguem reconstruir a estrutura.</li>
+</ul>
+<blockquote>
+<p>Ambos os sistemas possuem ferramentas e opções de criptografia geral do disco, precisando de uma senha para poder bootar e utilizar o disco, ainda podendo precisar da senha de usuário para entrar no sistema - caso assim esteja configurado.</p>
+</blockquote>
+<h2 id="queima-de-arquivo">Queima de arquivo</h2>
+<p>O <code>apagamento seguro</code> é uma técnica que permite eliminar os dados de forma definitiva e irreversível dos dispositivos de armazenamento.</p>
+<p>Essa técnica consiste em <strong>sobrescrever</strong> os dados várias vezes com padrões aleatórios ou zeros, impedindo que eles sejam recuperados por qualquer ferramenta. O apagamento seguro pode ser feito usando programas específicos ou comandos do sistema operacional.</p>
+<p>Outra técnica utilizada é a queima e/ou destruição do dispositivo de armazenamento, assim realmente não teria forma de recuperar os dados.</p>
+<h2 id="auditoria-de-sistema">Auditoria de sistema</h2>
+<p>A <code>auditoria de sistema</code> é a etapa em que se verifica as configurações e as atividades realizadas no sistema operacional do dispositivo de armazenamento.</p>
+<p>Essa auditoria pode revelar informações importantes para a investigação, como:</p>
+<ul>
+<li>Os <strong>usuários</strong> cadastrados no sistema e seus perfis</li>
+<li>Os <strong>programas</strong> instalados e executados no sistema</li>
+<li>Os <strong>arquivos</strong> acessados, modificados ou excluídos no sistema</li>
+<li>Os <strong>registros</strong> de eventos do sistema (logs)</li>
+<li>As <strong>conexões</strong> de rede do sistema</li>
+<li>As <strong>senhas</strong> salvas no sistema</li>
+</ul>
+<p>Para realizar a auditoria, são usadas ferramentas que permitem acessar e analisar tais informações, como o <em>Regedit</em>, o <em>Event Viewer</em>, o <em>Netstat</em>, o <em>Nirsoft</em>, entre outros.</p>
+<h2 id="criptoanálise">Criptoanálise</h2>
+<p>Primeiro vamos falar brevemente sobre o que é <code>criptografia</code>.</p>
+<p>A criptografia é uma técnica que permite transformar os dados em um código incompreensível para quem não tem a chave ou a senha para &lsquo;descriptografá-los&rsquo;.
+Nesse sentido, ela pode ser usada para proteger os dados de acessos não autorizados ou para ocultar informações sensíveis ou ilícitas.</p>
+<p>Já a criptoanálise é uma etapa em que se tenta decifrar ou quebrar os dados que foram criptografados ou protegidos por algum método de segurança.</p>
+<p>Existem vários tipos de criptografia, como:</p>
+<ul>
+<li>A <strong>criptografia simétrica</strong>: usa a mesma chave para criptografar e descriptografar os dados. <em>Exemplos: AES, DES e RC4.</em></li>
+<li>A <strong>criptografia assimétrica</strong>: usa uma chave pública para criptografar e uma chave privada para descriptografar os dados. <em>Exemplos: RSA, ECC, DSA.</em></li>
+<li>A <strong>criptografia híbrida</strong>: usa uma combinação dos dois tipos anteriores. <em>Exemplo: SSL/TLS.</em></li>
+</ul>
+<p>Para realizar a criptoanálise, são usadas ferramentas que permitem tentar descobrir ou forçar as chaves ou as senhas usadas na criptografia, como o John the Ripper, o Hashcat (e até o Wireshark), entre outros.</p>
+<h2 id="análise-de-esteganografia">Análise de esteganografia</h2>
+<p>Para falar sobre como é a sua análise, precisamos primeiro falar sobre o que de fato ela é.</p>
+<p>A <code>Esteganografia</code> é uma técnica que permite esconder informações dentro de outras informações aparentemente inocentes ou irrelevantes, e pode ser usada para evitar a detecção ou a interceptação dos dados por quem não tem a chave correta ou o conhecimento necessário para decifrar a informação escondida. Ela é frequentemente usada para comunicações seguras, proteção de dados e várias outras aplicações onde a privacidade e a segurança são importantes, além de poder ser utilizada ao arrepido da lei em determinadas situações.</p>
+<p>Já a <code>Análise de Esteganografia</code> é uma técnica de computação forense que visa detectar e extrair informações ocultas em arquivos digitais, como imagens, áudios, vídeos ou textos, isto é, uma etapa importante de uma investigação forense em que se tenta detectar ou extrair os dados que foram escondidos dentro de outros dados usando algum método de ocultação. Essas informações podem ser usadas para fins maliciosos, como espionagem, sabotagem, fraude ou terrorismo. Por isso, é importante conhecer os métodos e ferramentas que permitem realizar essa análise e revelar os segredos escondidos.</p>
+<h3 id="métodos-de-esteganografia">Métodos de esteganografia</h3>
+<ul>
+<li>
+<p>Um dos métodos mais comuns de esteganografia é a <strong>inserção de bits de informação em uma imagem</strong>, alterando levemente sua cor ou brilho.
+Essa alteração é imperceptível ao olho humano, mas pode ser detectada por um programa de computador que analisa o espectograma da imagem, ou seja, a representação gráfica das frequências e intensidades dos pixels. Um exemplo de ferramenta que faz essa análise é o Stegsolve, que permite visualizar diferentes camadas da imagem e identificar possíveis padrões ou mensagens ocultas.</p>
+</li>
+<li>
+<p>Outro método é usar um editor hexadecimal para modificar diretamente os dados binários de uma imagem, inserindo um texto codificado em uma área específica do arquivo.
+Um editor hexadecimal é um programa que permite visualizar e editar os dados em formato hexadecimal, que é uma forma de representar números binários usando 16 símbolos (0 a 9 e A a F).
+<em>(Um exemplo de editor hexadecimal é o HxD, que permite abrir qualquer tipo de arquivo e alterar seus bytes livremente)</em></p>
+</li>
+</ul>
+<p>Existem também programas específicos para esconder informações em arquivos, como o OpenPuff e o Quick Stego.</p>
+<ul>
+<li>O <code>Quick Stego</code> é um software mais simples, que permite esconder apenas textos em imagens, usando um método chamado LSB (Least Significant Bit), que consiste em substituir o bit menos significativo de cada pixel pelo bit correspondente do texto.</li>
+<li>Já o <code>OpenPuff</code> é um software que usa técnicas avançadas de criptografia e compressão para ocultar vários tipos de arquivos em imagens, áudios ou vídeos. Ele também permite escolher um nível de segurança e uma senha para proteger os dados.</li>
+</ul>
+<p>Uma outra forma de esconder <em>informações</em> em <em>imagens</em> é usar QR Code.</p>
+<ul>
+<li><strong>Códigos QR</strong> (Quick Response) são códigos de barras bidimensionais que podem armazenar dados alfanuméricos. Este pode ser gerado por um site ou aplicativo, como o QR Code Generator, e inserido em uma imagem usando um editor gráfico, como o Photoshop. Para ler o código, basta usar um leitor específico, como o QR Code Reader, que pode ser instalado em um smartphone ou tablet.</li>
+</ul>
+<p>Um método mais <em>sofisticado</em> de esteganografia é <strong>usar textos em spam</strong> para ocultar mensagens.</p>
+<ul>
+<li>Esse método <strong>SpamText</strong> consiste em gerar textos aleatórios ou sem sentido, usando palavras-chave relacionadas a um assunto específico, como medicamentos, viagens ou negócios. Esses textos são enviados por e-mail ou publicados em sites ou redes sociais, com o objetivo de despistar os filtros anti-spam e atrair a atenção dos destinatários. No entanto, esses textos podem conter informações codificadas, que podem ser decifradas por quem conhece o algoritmo usado para gerá-los. Um exemplo de ferramenta que faz isso é o Spam Mimic, que permite escrever e decodificar mensagens usando vários tipos de spam.</li>
+</ul>
+<p>Além disso tudo, existe uma forma muito simples de esteganografia que qualquer usuário normal de windows pode fazer para esconder arquivos em imagens.</p>
+<ul>
+<li>Esse método consistem em usar o <strong>WinRAR</strong>. Como já devem conhecer, é um programa que permite compactar e descompactar arquivos em vários formatos, como ZIP ou RAR. Para esconder um arquivo em uma imagem, basta selecionar os dois arquivos no Windows Explorer, clicar com o botão direito do mouse e escolher a opção &ldquo;Adicionar ao arquivo&hellip;&rdquo;. Na janela que se abre, escolher o formato RAR e marcar a opção &ldquo;Criar arquivo SFX&rdquo;. Isso vai gerar um arquivo executável com a extensão .exe e o ícone da imagem original. Para extrair o arquivo oculto, basta executar o arquivo .exe e escolher a pasta de destino.</li>
+</ul>
+<p>Como se pode ver, existem vários métodos e ferramentas para realizar a análise de esteganografia, uma técnica essencial para a computação forense. Essa análise pode revelar informações valiosas para a investigação e solução de crimes cibernéticos, bem como para a proteção da segurança e da privacidade dos usuários.
+Por isso, é importante estar atento aos sinais de que uma imagem pode conter algo mais do que aparenta, e usar os recursos adequados para desvendar os mistérios da esteganografia.</p>
+<h2 id="lista-de-ferramentas-forense">Lista de Ferramentas Forense</h2>
+<p>Segue algumas ferramentas comuns, algumas podendo ser facilmente achadas em distribuições linux com foco em área de segurança ou forense, como Kali.</p>
+<ul>
+<li>
+<p><strong>Volatility</strong>: Este Framework é uma coleção de ferramentas, de código livre e gratuita, para análise de memória RAM. Normalmente utilizada em ambientes Linux, e já presente em algumas distribuições, como o Kali Linux.</p>
+</li>
+<li>
+<p><strong>FTK Imager</strong>: É uma ferramenta de visualização e geração de imagens de dados que permite examinar arquivos e pastas em discos rígidos locais, unidades de rede, CDs/DVDs e revisar o conteúdo de imagens forenses ou despejos de memória.</p>
+</li>
+<li>
+<p><strong>CAINE</strong>: Computer Aided Investigative Environment é o Live CD do Linux que contém uma grande quantidade de ferramentas forenses digitais.</p>
+</li>
+<li>
+<p><strong>HxD</strong>: É um editor hexadecimal de fácil utilização que permite realizar edição e modificação de baixo nível de um disco bruto ou da memória principal (RAM).</p>
+</li>
+<li>
+<p><strong>ExifTool</strong>: É um aplicativo de linha de comando usado para ler, gravar ou editar informações de metadados de arquivos.</p>
+</li>
+<li>
+<p><strong>Sistema IPED</strong>: É um programa computacional forense desenvolvido no Brasil, por peritos federais, para a investigação na Operação Lava Jato.</p>
+</li>
+<li>
+<p><strong>Binwalk</strong>: É uma ótima ferramenta quando temos uma imagem binária e temos que extrair arquivos embutidos e códigos executáveis deles.</p>
+</li>
+<li>
+<p><strong>p0f</strong>: É uma ferramenta que pode identificar o sistema operacional de um host de destino simplesmente examinando os pacotes capturados.</p>
+</li>
+<li>
+<p><strong>pdf-parser</strong>: É uma ferramenta que analisa um documento PDF para identificar os elementos fundamentais usados ​​no arquivo PDF analisado.</p>
+</li>
+<li>
+<p><strong>Dumpzilla</strong>: É uma ferramenta para extrair todas as informações interessantes e descobrir o máximo de dados forenses possíveis do armazenamento do Mozilla Firefox, Google Chrome e Internet Explorer.</p>
+</li>
+</ul>
+<h4 id="links-referenciais-sobre-ferramentas-forense">Links referenciais sobre ferramentas forense</h4>
+<p>Alguns links interessantes para ter de referências sobre as ferramentas.</p>
+<ul>
+<li><a href="https://medium.com/@forensedigitalbrasil/10-ferramentas-que-um-perito-forense-nunca-pode-esquecer-6668ce3f02d5">10 ferramentas gratuitas de um perito Forense Digital - Medium: Forense Digital Brasil</a></li>
+<li><a href="https://academiadeforensedigital.com.br/recuperacao-de-dados-conheca-as-principais-ferramentas/">Principais ferramentas de recuperação - Academia Forense Digital</a></li>
+<li><a href="https://acervolima.com/kali-linux-ferramentas-forenses/">KALI LINUX - FERRAMENTAS FORENSES</a></li>
+<li><a href="https://isolution.pro/pt/t/kali-linux/kali-linux-forensics-tools/kali-linux-ferramentas-forenses">Kali Linux Ferramentas Forense - Tutorial</a></li>
+<li><a href="https://tecnologia.blackpilado.com.br/2024/01/lista-das-melhores-ferramentas-do-kali.html">LMelhores ferramentas do Kali Linux</a></li>
+<li><a href="https://pt.moyens.net/linux/21-ferramentas-de-penetracao-importantes-no-kali-linux/">21 Ferramentas de penetração importantes do Kali</a></li>
+</ul>
+<h4 id="recomendação-de-conteúdo">Recomendação de conteúdo</h4>
+<p>Para começar a estudar forense, você pode estudar através de diversos conteúdos gratuitos e pagos pela internet, ou até matérias específicas e/ou cursos de extensõies de uma faculdade.
+Nunca pare de estudar, sempre busque por mais conhecimento. Talvez você queira até estudar para concurso e trabalhar para a polícia federal como investigador forense digital, isso demandaria bastante estudo não apenas dos conteúdos derivados deste post, mas dos conteúdos do concurso. Um futuro difícil e promissor que pode ser traçado por você, mas calma&hellip; um passo de cada vez, sem pular etapas.</p>
+<p>Eu tenho três recomendações de conteúdos para quem não sabe nada e quer começar:</p>
+<ul>
+<li>Primeiro: O livro &ldquo;Desvendando a Computação Forense&rdquo; da Novatec é um bom livro até para quem não sabe nada de computação, pois ele passa pelo básico de computação e explica muito bem sobre forense digital, tendo sido escrito por profissionais da área. Boa porta de entrada.</li>
+<li>Segundo: Vídeos do youtube. Existe diversos vídeos super bons em conteúdo e gratuitos, também sendo ótimo como porta de entrada. Um canal que eu recomendo é o &ldquo;Fábrica de Noobs&rdquo;, ele possui diversos vídeos sobre o básico de forense geral, esteganografia e criptografia (com pdf).</li>
+<li>Terceiro: Aulas disponibilizadas ao público. Esta é basicamente parte da segunda dica. Diversos professores universitários decidem postar suas aulas gratuitas em canais do youtube, desde gringos a brasileiros. Quando eu estudava na UFRJ e fiz a matéria de segurança, meu professor gravava a aula e postava em seu canal do youtube (infelizmente so gravava pela tela do pc, então não tinha ele apontando no quadro sobre o que fala e o audio nunca ficava distante, mas já era algo). Dessa forma quem precisava faltar tinha o conteúdo, além de poder ficar para qualquer entusiasta. Nesta matéria havia a parte de forense e talvez ainda seja possível achar no youtube, seu nome é Claudio Miceli e qualquer conteúdo dele será super recomendado por mim.</li>
+</ul>
+<p>Espero que tenham gostado desta publicação. Não sou focado na área de forense e ainda tenho muito que aprender, basicamente tentei escrever o pouco que sei de forma introdutória. Se tiver uma forma melhor de introdução ou até se eu tiver esquecido algo, favor me deixe sabendo. Tente comentar, mandar e-mail ou direct, tanto faz. Abração!</p>
+</article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="application/javascript" src='js/toc.js'></script>
+<link rel="stylesheet" href='css/toc.css' />
+
+<div id="gitalk-container" class="gitalk-container"></div>
+<link rel="stylesheet" href='css/gitalk.css'>
+<script src='js/gitalk.min.js'></script>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '097939594343c0ecdfda',
+    clientSecret: 'cd61ebe34d6edd02560e48a54e4dc397c5b9fade',
+    repo: 'repo',
+    owner: 'matheuslaidler',
+    admin: ['matheuslaidler'],
+    id: eval("location.pathname"), 
+    distractionFreeMode: false 
+  });
+  (function() {
+    gitalk.render('gitalk-container');
+  })();
+</script>
+
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="https://github.com/matheuslaidler/matheuslaidler.github.io" target="_blank"> 
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0">Theme <a href='https://github.com/matheuslaidler/github-style-remaster'>GitHub Style Remaster</a> <br>Forked from <a href='https://github.com/MeiK2333/github-style'>Github Style</a> by MeiK2333 <br>Blog created with <a href='https://gohugo.io/'>Hugo</a> and <a href='https://pages.github.com/'>Github Pages </a> <br><center><i>(Todos os devidos créditos ao criador do tema)</i></center></li>
+      
+    </ul>
+    <a aria-label="LICENSE" title="Copyright" class="footer-octicon d-none d-lg-block mr-lg-4" href="https://github.com/matheuslaidler/matheuslaidler.github.io/blob/main/LICENSE" target="_blank">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      <center><li class="mr-3 mr-lg-0">  Finalidade acadêmica e sem fins lucrativos.<br> © Copyright 2020 - All rights reserved 🌎 <br><i> Todos os direitos reservados.<br></i></li></center>
+      </ul>
+    <a aria-label="English" title="Medium" class="footer-octicon d-none d-lg-block mr-lg-4" style="text-decoration:none;" href="https://medium.com/@matheuslaidler" target="_blank">
+      <svg height="20" class="octicon octicon-mark-github" viewBox="0 -3.5 16 16" version="1.1" width="20">
+        <path fill-rule="evenodd"
+          d="M9.025 8c0 2.485-2.02 4.5-4.513 4.5A4.506 4.506 0 0 1 0 8c0-2.486 2.02-4.5 4.512-4.5A4.506 4.506 0 0 1 9.025 8m4.95 0c0 2.34-1.01 4.236-2.256 4.236S9.463 10.339 9.463 8c0-2.34 1.01-4.236 2.256-4.236S13.975 5.661 13.975 8M16 8c0 2.096-.355 3.795-.794 3.795-.438 0-.793-1.7-.793-3.795 0-2.096.355-3.795.794-3.795.438 0 .793 1.699.793 3.795">
+        </path>
+        <center>🇺🇸</center>
+      </svg>
+    </a>
+    <a aria-label="Videos" title="Youtube" class="footer-octicon d-none d-lg-block mr-lg-4" href="https://youtube.com/@matheuslaidler" target="_blank">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 1.35 17 17" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z">
+        </path>
+      </svg>
+    </a>
+    <a aria-label="Profile" title="Instagram" class="footer-octicon d-none d-lg-block mr-lg-4" href="https://instagram.com/matheuslaidler" target="_blank">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0.125 18.5 18.5" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334">
+        </path>
+      </svg>
+    </a>
+    <a aria-label="Professional" title="LinkedIn" class="footer-octicon d-none d-lg-block mr-lg-4" href="https://linkedin.com/in/" target="_blank">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0.25 19 19" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z">
+        </path>
+      </svg>
+    </a>
+  </div>
+
+  
+  
+  
+  <img class="footer-octicon d-none d-lg-block mr-lg-4" style="height:10ch;width:auto;margin-inline:136ch;margin-top:-17.5ch;opacity:0.45;" src="/images/menu/matheus.png">
+  <li class="footer-octicon d-none d-lg-block mr-lg-4" style="height:12ch;width:auto;margin-inline:48ch;margin-top:-7ch;">O proprietário deste site não assume quaisquer responsabilidades provenientes das ações de terceiros. </li>
+  
+</div>
+</body>
+
+<script type="application/javascript" src="js/github-style.js"></script>
+
+
+
+
+</html>

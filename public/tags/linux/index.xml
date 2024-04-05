@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Matheus Laidler Page</title>
+    <link>/tags/linux/</link>
+    <description>Recent content in Linux on Matheus Laidler Page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Sun, 28 Jan 2024 00:53:38 -0300</lastBuildDate>
+    <atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dominando Terminal do zero</title>
+      <link>/post/terminal/</link>
+      <pubDate>Mon, 24 Feb 2020 18:49:01 +0200</pubDate>
+      <guid>/post/terminal/</guid>
+      <description>Linux: Dando início a uma fase Terminal - Dominando linha de comando UNIX&#xD;Perfeito para quem quer conhecer, aprender, relembrar ou masterizar - Conteúdo do material: Introdução; Conhecendo o Terminal e suas estruturas;&#xA;Desmistificando terminal e seus comandos;&#xA;Adequação ao terminal linux para usuários de windows;&#xA;Os comandos mais importantes e usados;&#xA;Dominando terminal com filtragem e macetes;&#xA;Listagem geral de comandos (resumidos).&#xA;(Estes itens não são os tópicos exatamente)</description>
+    </item>
+  </channel>
+</rss>

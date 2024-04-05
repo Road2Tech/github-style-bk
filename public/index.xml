@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Matheus Laidler Page</title>
+    <link>/</link>
+    <description>Recent content on Matheus Laidler Page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Mon, 29 Jan 2024 20:02:12 -0300</lastBuildDate>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Invadindo rede wifi na prática</title>
+      <link>/post/hackeando-wifi/</link>
+      <pubDate>Fri, 25 Aug 2023 08:19:12 +0200</pubDate>
+      <guid>/post/hackeando-wifi/</guid>
+      <description>Hackeando redes sem fio na prática Neste artigo vou mostrar para vocês como funciona na prática a invasão de uma rede wireless, e como foi minhas primeiras experiências hackeando redes wifi reais.&#xA;Será considerado que você já sabe do básico de redes wireless, como funcionam os protocolos e conceitos, pois eles não serão explicados aprofundadamente nesta publicação. Para isso, teremos uma postagem específica que correrá por toda essa base de forma detalhada.</description>
+    </item>
+    <item>
+      <title>Desvendando a Forense Digital</title>
+      <link>/post/forense-%C3%A0-primeira-vista/</link>
+      <pubDate>Sun, 20 Aug 2023 18:29:10 +0200</pubDate>
+      <guid>/post/forense-%C3%A0-primeira-vista/</guid>
+      <description>Computação Forense à primeira vista Introdução geral para a área tecnológica de forense computacional.&#xA;Conhecendo a área A computação forense é uma área da ciência da computação que se dedica a investigar e analisar dados digitais com o objetivo de encontrar evidências ou informações relevantes para casos judiciais, criminais ou administrativos. A computação forense envolve diversas etapas, desde a aquisição de imagem dos dispositivos de armazenamento até a recuperação de arquivos apagados ou ocultos.</description>
+    </item>
+    <item>
+      <title>Desvendando os perigos em uma WiFi</title>
+      <link>/post/perigos-da-wifi/</link>
+      <pubDate>Wed, 12 May 2021 15:29:11 +0200</pubDate>
+      <guid>/post/perigos-da-wifi/</guid>
+      <description>Além do Sinal: Conhecendo os principais perigos de uma rede wireless As &amp;lsquo;Ameaças Invisíveis&amp;rsquo; que te farão compreender os principais riscos das redes sem fio (wireless). Será apresentado alguns dos &amp;ldquo;Perigos Ocultos&amp;rdquo; ignorados pela maioria da população.&#xA;É comum ouvirmos coisas que soam como:&#xA;&amp;ldquo;Aah, qual o problema de usar wifis alheias e compartilhar minha rede com qualquer pessoa? Essa galerinha de segurança complicam tudo&amp;hellip; cheios de regrinha chata!&amp;rdquo;&#xA;Por isso acho importante uma publicação como esta, que mostrará alguns riscos de segurança que podem estar presente em diversas situações &amp;lsquo;banais&amp;rsquo; do dia-a-dia.</description>
+    </item>
+    <item>
+      <title>Testando minha paciência</title>
+      <link>/post/teste/</link>
+      <pubDate>Wed, 24 Feb 2021 18:49:01 +0200</pubDate>
+      <guid>/post/teste/</guid>
+      <description>TESTE This is some content Teste de documentação Java é dificil Será mesmo? Código java com acento no markdown public static void main(String[]args) { System.out.println(&amp;#34;This is a print statement&amp;#34;); } Código java com til no markdown public static void main(String[]args) { System.out.println(&amp;#34;This is a print statement&amp;#34;); } Mostrando os acentos -&amp;gt; Exemplo de tabela 1 Exemplo MK Exemplo 1 ``` Exemplo 2 ~~~ Exemplo de tabela com centralização de valor Alinhado a esquerda Centralizado Alinhado a direita Valor Valor Valor Exemplos de formatações em geral aaaa BBBBB cccccc Item 1 Item 2 Item 3 Item 1 Item 2 Item 3 !</description>
+    </item>
+    <item>
+      <title>Dominando Terminal do zero</title>
+      <link>/post/terminal/</link>
+      <pubDate>Mon, 24 Feb 2020 18:49:01 +0200</pubDate>
+      <guid>/post/terminal/</guid>
+      <description>Linux: Dando início a uma fase Terminal - Dominando linha de comando UNIX&#xD;Perfeito para quem quer conhecer, aprender, relembrar ou masterizar - Conteúdo do material: Introdução; Conhecendo o Terminal e suas estruturas;&#xA;Desmistificando terminal e seus comandos;&#xA;Adequação ao terminal linux para usuários de windows;&#xA;Os comandos mais importantes e usados;&#xA;Dominando terminal com filtragem e macetes;&#xA;Listagem geral de comandos (resumidos).&#xA;(Estes itens não são os tópicos exatamente)</description>
+    </item>
+    <item>
+      <title></title>
+      <link>/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/readme/</guid>
+      <description>Let&#39;s Hack the World!&#xA;👋 😎 Boas vindas ao meu projeto pessoal! Conteúdo que visa conscientizar e auxiliar no processo de aprendizado de milhares de entusiastas e estudantes sobre tecnologia e segurança da informação. Conhecendo o Acervo 📃 Todas os materiais, como postagens e artigos, se encontram em Portal; 📁 As abas /tags/ e /categories/ podem ser utilizadas para fltrar postagens por Temas e Áreas; 🕵️‍♂️ A ferramenta de busca do site pode ajudar a filtrar conteúdo específico através google.</description>
+    </item>
+  </channel>
+</rss>
